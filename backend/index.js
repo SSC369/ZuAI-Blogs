@@ -17,6 +17,10 @@ app.listen(3000, () => {
   console.log("Server is running on 3000 port");
 });
 
+app.get("/", (req, res) => {
+  res.send("API is working");
+});
+
 const mongoUri = process.env.MONGODB_CONNECTION_LINK;
 
 const connectToMongo = async () => {
