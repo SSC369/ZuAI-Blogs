@@ -22,11 +22,11 @@ ZUAI Blogs is a basic blog application that features a list view and a detail vi
 ### Technologies Used
 
 - **Frontend**: React, Vite
-- **Backend**: Node.js, Express
+- **Backend**: Node.js, Express,
 - **Database**: MongoDB
-- **Deployment**: Render, Fly.io, or Heroku
+- **Deployment**: Render for backend, netlify for frontend
 - **Authentication**: JWT
-- **Firebase**: For frontend configuration
+- **Firebase**: For images upload
 
 ## Backend
 
