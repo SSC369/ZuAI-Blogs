@@ -25,6 +25,7 @@ const Home = () => {
 
   const fetchBlogs = async () => {
     try {
+      setLoading(true);
       const url =
         import.meta.env.VITE_BACKEND_URL + `/posts?query=${blogInput}`;
       const res = await axios.get(url);
@@ -34,13 +35,12 @@ const Home = () => {
     } catch (error) {
       toast.error(error.response.data.msg, { duration: 1000 });
     } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    setLoading(true);
     fetchBlogs();
-    setLoading(false);
   }, []);
 
   const debouncedFetchBlogs = useCallback(debounce(fetchBlogs, 500), [
@@ -61,31 +61,29 @@ const Home = () => {
       style={{ minHeight: "calc(100dvh - 70px)" }}
       className="bg-slate-200 flex flex-col min-w-[300px] py-4"
     >
+      <div className="flex justify-center self-center items-center my-5 w-[80%] max-w-[600px]">
+        <input
+          value={blogInput}
+          onChange={(e) => setBlogInput(e.target.value)}
+          placeholder="Search for a blog"
+          type="text"
+          className="bg-slate-100 h-[40px] rounded-l-lg pl-3 outline-none cursor-pointer w-[80%] max-w-[400px]"
+        />
+        <button
+          onClick={fetchBlogs}
+          style={
+            blogInput === "" ? { opacity: "0.5", pointerEvents: "none" } : {}
+          }
+          className="bg-purple-800 h-[40px] text-white px-3 rounded-r-lg flex items-center justify-center"
+        >
+          <CgSearch fontSize={24} />
+        </button>
+      </div>
       {isLoading === true ? (
         <Loader />
       ) : (
         <>
-          <div className="flex justify-center self-center items-center my-5 w-[80%] max-w-[600px]">
-            <input
-              value={blogInput}
-              onChange={(e) => setBlogInput(e.target.value)}
-              placeholder="Search for a blog"
-              type="text"
-              className="bg-slate-100 h-[40px] rounded-l-lg pl-3 outline-none cursor-pointer w-[80%] max-w-[400px]"
-            />
-            <button
-              onClick={fetchBlogs}
-              style={
-                blogInput === ""
-                  ? { opacity: "0.5", pointerEvents: "none" }
-                  : {}
-              }
-              className="bg-purple-800 h-[40px] text-white px-3 rounded-r-lg flex items-center justify-center"
-            >
-              <CgSearch fontSize={24} />
-            </button>
-          </div>
-          {blogs?.length === 0 ? (
+          {blogs?.length === 0 && isLoading === false ? (
             renderEmptyView()
           ) : (
             <>
@@ -104,10 +102,10 @@ const Home = () => {
                       </p>
 
                       {imageUrl && (
-                        <div className="self-center">
+                        <div className="self-center flex flex-col">
                           <img
                             src={imageUrl}
-                            className="h-[200px] rounded-xl"
+                            className="w-[80%] self-center max-w-[300px] rounded-xl"
                           />
                         </div>
                       )}

@@ -126,14 +126,14 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-[calc(100dvh-70px)] min-w-[300px]  py-[20px] flex flex-col bg-slate-200">
+    <div className="min-h-[calc(100dvh-70px)] min-w-[300px]  p-4 flex flex-col bg-slate-200">
       {isLoading ? (
         <Loader />
       ) : (
         <div className="flex flex-col items-center gap-[20px] md:flex-row md:items-start md:justify-center md:gap-[10px]">
           {data?.imageUrl && (
             <div className="w-[80%] flex justify-center items-center md:w-fit">
-              <img className="h-[200px] md:h-[300px]" src={data?.imageUrl} />
+              <img className="w-80% md:h-[300px]" src={data?.imageUrl} />
             </div>
           )}
 
@@ -156,7 +156,7 @@ const Blog = () => {
               <p className="">{dayjs(data?.date).format("MMM D, YYYY")}</p>
             </div>
 
-            <div className="cursor-pointer flex items-center gap-10 text-lg my-2">
+            <div className="cursor-pointer flex justify-between items-center text-lg my-2 max-w-[300px]">
               {data?.userId === userId && (
                 <div className="flex items-center gap-2 text-sm">
                   <p className="text-slate-600">Edit</p>
@@ -195,7 +195,7 @@ const Blog = () => {
               comments
             </p>
 
-            <p className="break-words bg-slate-100 rounded-lg p-2 text-[12px] mt-[4px] mb-[8px]">
+            <p className="break-words bg-slate-100 rounded-lg p-2 text-sm mt-[4px] mb-[8px]">
               {data?.description}
             </p>
           </div>
