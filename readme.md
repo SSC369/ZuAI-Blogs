@@ -1,4 +1,4 @@
-# ZUAI Blogs
+# Blogz
 
 ## APPLICATION DEMO
 
@@ -6,9 +6,9 @@ https://drive.google.com/file/d/1PZeaxSXY5rYCOsLxGnnMnskJ6pa7Uw08/view?usp=shari
 
 ## HOSTED LINK
 
-https://zuai-blogs-48b62c.netlify.app
+https://blogz-369.netlify.app
 
-ZUAI Blogs is a basic blog application that features a list view and a detail view for blog posts. This project demonstrates full-stack development, including frontend, backend, database management, and deployment.
+ Blogz is a basic blog application that features a list view and a detail view for blog posts. This project demonstrates full-stack development, including frontend, backend, database management, and deployment.
 
 ## Project Overview
 
@@ -35,8 +35,8 @@ ZUAI Blogs is a basic blog application that features a list view and a detail vi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/zuai-blogs.git
-   cd zuai-blogs
+   git clone https://github.com/yourusername/-Blogz.git
+   cd -Blogz
    ```
 
 2. Navigate to the backend directory:
@@ -73,7 +73,7 @@ ZUAI Blogs is a basic blog application that features a list view and a detail vi
 
 ## Frontend
 
-This is the frontend part of the ZUAI Blogs application, built using React and Vite. The application features a responsive layout for viewing, creating, and editing blog posts. It also includes user authentication and a comment system.
+This is the frontend part of the  Blogz application, built using React and Vite. The application features a responsive layout for viewing, creating, and editing blog posts. It also includes user authentication and a comment system.
 
 ## Features
 
@@ -95,8 +95,8 @@ Ensure you have Node.js and npm installed. If not, download and install them fro
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/zuai-blogs.git
-   cd zuai-blogs/frontend
+   git clone https://github.com/yourusername/-Blogz.git
+   cd -Blogz/frontend
    ```
 
 2. Install dependencies:
